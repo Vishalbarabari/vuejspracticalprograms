@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>event handling</h1>
+    <div id="myapp">
+      <h2>counter: {{counter }}</h2>
+      <br>
+      <button type="button" v-on:click="increment" name="button">increment by one</button>
+      <button type="button" v-on:click="decrement" name="button">decrement by one</button><br><br>
+      <button type="button" v-on:dblclick="i"> doubleclick to increment by 5</button>
+      <button type="button" v-on:dblclick="d">doubleclick to decrement by 5</button>
+    </div>
+ 
+    <script>
+        var myapp= new Vue({
+            el:"#myapp",
+            data:{
+                counter:0
+            },
+            methods:{
+                increment : function(){
+                    this.counter++;
+                },
+                decrement : function(){
+                    this.counter--;
+                },
+                i : function(){
+                    this.counter+=5;
+                },
+                d : function(){
+                    this.counter-=5;
+                },
+
+            }
+
+        })
+    </script>
+</body>
+</html>

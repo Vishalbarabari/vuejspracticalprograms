@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>two way data binding</h2>
+    <div id="myapp">
+ <input type="text" v-model="character">
+<br>
+<h3>{{character}}</h3>
+
+<form >
+    <input type="text" v-model="name" placeholder="name" >{{name}}<br><br>
+    <input type="text" v-model="email" placeholder="email" >{{email}}<br>
+    
+</form>
+    </div>
+
+    <script>
+        var myapp=new Vue({
+
+            el:"#myapp",
+            data:{
+                character:"",
+                name:'',
+                email:""
+            },
+            methods: {
+   keypressfunction:function(){
+   this.character=event.key
+   }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>event modifiers-once,prevent,stop,capture</h1>
+
+    <div id="myapp">
+<h3>{{counter}}</h3>
+<button type="button" name="button" @click.once="incrementby1">click+1</button>
+<br>
+<p>changing the default behavior of event</p>
+<a href="https://www.youtube.com/" @click.prevent>youtube(prevent)</a>
+ 
+<br><br>
+<div id="parent" @click.stop="submitclick">
+    <button id="child" @click="submitclick">click me
+
+    </button>
+</div>
+<br>
+<br>
+
+<script>
+var myapp = new Vue({
+    el:"#myapp",
+    data:{
+      counter: 0  
+    },
+    methods:{
+        incrementby1:function(){
+            this.counter+=1
+        },
+    submitclick:function(){
+        alert('clicked')
+    }
+    }
+})
+</script>
+</body>
+</html>

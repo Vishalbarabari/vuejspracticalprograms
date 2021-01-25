@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>mouse event handling</h1>
+    <div id="myapp">
+    <div class="move-area" @mousemove="movefunction" style="height: 150px;
+    width: 150px;border: 1px solid black;">
+     <span>{{x}},{{y}}</span>
+    
+    </div><br>
+    <button type="button" name="button"@mouseover='overfunction'>mouseover </button>
+    <br><br>
+    <button type="button" name="button"@mouseout='outfunction'>mouseout </button>
+        
+    </div>
+
+    <script>
+        var myapp = new Vue({
+            el:'#myapp',
+            data:
+            {
+                x:0,
+                y:0
+            },
+            methods:{
+            movefunction : function(event){
+           this.x= event.offsetX;
+           this.y= event.offsetY;
+
+            },
+            overfunction: function(){
+                alert("mouse over triggered")
+            },
+            outfunction: function(){
+                alert("mouse out triggered")
+            }
+        } 
+        });
+    </script>
+</body>
+</html>

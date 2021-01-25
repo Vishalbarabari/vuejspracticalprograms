@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>data binding</h1>
+    <div id="my-app">
+    <h3>{{name}}</h3> 
+    <h2>{{ulink}}</h2> 
+    <a v-bind:href="ulink">{{name}} click here</a>
+   
+    <h3>html form binding</h3>
+    <form method="POST">
+        <input type="text" v-bind:value="txtname" placeholder="name"><br><br>
+        <input type="text" v-bind:value="txtmail" placeholder="email">
+        <button type="button" name="button">SUBMIT</button>
+
+    </form>
+    </div>
+
+
+    <script>
+var myapp = new Vue({
+
+    el:'#my-app',
+    data:{
+        name:"online tutorials (youtube link)",
+        ulink:'https://www.youtube.com/',
+        txtname:'',
+
+        txtmail:''
+        
+    }
+
+})
+    </script>
+</body>
+</html>

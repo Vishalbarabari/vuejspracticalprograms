@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>signup form</h1>
+    <div id="root">
+        <h1>{{ greet }}</h1>
+        <h1><u>{{ greet2 }}</u> of the element</h1>
+        <input v-model='greet'>
+        <div v-if="count===1">this is equal</div>
+        <div v-else>this is  not equal</div>
+
+        <div v-show="count===1">this is equal</div>
+        <div>
+            <h2>signup</h2>
+            <h1>{{email}} is your registered email</h1>
+            <br>
+            <input v-model="email" :class="[ email.length <5 ? 'red': 'green']">
+            <br><br>
+            <button onclick="alert('signed up')" :disabled="email.length < 5">submit</button>
+            
+        </div>
+    </div>
+
+    <script>
+        new Vue (
+            {
+                el:'#root',
+                data:
+                { greet:'type below',
+                  greet2:'this is third paragraph',
+                  count:4,
+                email:''}
+            }
+        )
+    </script>
+</body>
+</html>
