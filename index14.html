@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>v-for directive</h2>
+    <div id="myapp">
+  <ul>
+      <li v-for="student in students">
+  {{student}}
+      </li>
+  </ul>
+  <br><hr>
+  <ul>
+      <li v-for="bike in bikes">
+    {{bike.name}} --{{bike.company}}
+      </li>
+  </ul>
+    </div>
+
+    <script>
+        var myapp = new Vue({
+            el:"#myapp",
+            data:{
+          students:["mercedes","bmw","nissan","renault"],
+          bikes:[
+              {name:"maestro" ,company:"hero"},
+              {name:"activa" ,company:"honda"},
+              {name:"pulsar" ,company:"hero"},
+          ]
+            }
+        })
+    </script>
+</body>
+</html>

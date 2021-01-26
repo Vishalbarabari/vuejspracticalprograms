@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>gettters and setters function</h2>
+    <div id="myapp">
+    fname:<input type="text" placeholder="enter first name" v-model="firstname"><br>  
+   
+    lname:<input type="text" placeholder="enter last name" v-model="lastname"><br>
+    <h3>fullname:<input type="text" v-model="fullname"/></h3>
+    <h3>hobbies:{{hobbies}}</h3>
+
+</div>
+
+    <script>
+        var newapp=new Vue({
+            el:"#myapp",
+            data:{
+            firstname:"",
+            lastname:"",
+            hobbies:"travelling"
+            },
+            computed:{
+                fullname:{
+                    get:function(){
+                    return this.firstname+" "+this.lastname;
+                 },
+                 set:function(){
+                    this.hobbies = "travelling and cooking"
+                 }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

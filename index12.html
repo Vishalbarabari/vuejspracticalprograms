@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+    <style>
+        button.redclass{
+            background: rgb(236, 8, 8);
+            border: 1px solid black;
+            color: grey;
+        }
+            button{
+                background: blue;
+                border: 1px solid black;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <h3> adding dynamic classs in css</h3>
+<br>
+    <div id="myapp">
+   <button type="button" v-bind:class="{redclass:isActive}" @click="toggleclass">toggle class</button>
+    </div>
+    
+    <script>
+        var myap = new Vue({
+            el:"#myapp",
+            data:{ 
+                isActive:true
+            },
+            methods:{
+                toggleclass(){
+
+                  this.isActive=!this.isActive;  
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

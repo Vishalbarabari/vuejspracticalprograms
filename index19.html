@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>vue custom directives</h1>
+
+    <div id="myapp">
+        <button type="button" name="button" v-on:click="updatevalue" v-custom-directive="message"> click me</button>
+    </div>
+    
+    <script>
+     Vue.directive('custom-directive',{
+        bind:function(el,binding,vnode){
+            console.log(el)
+            el.style.backgroundColor ="blue";
+            el.style.fontSize="20px"
+            console.log(binding)
+        },
+        update:function(){
+            console.log("running")
+        },
+        unbind: function(){
+
+        }
+     })
+
+        var myapp = new Vue({
+            el:"#myapp",
+            data:{
+             message:"this is custom directive"   
+            },
+            methods:{
+                updatevalue: function(){
+                    this.message="value is updated now"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

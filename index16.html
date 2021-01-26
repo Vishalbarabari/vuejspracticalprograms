@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script><title>Document</title>
+</head>
+<body>
+    <h3>components in vue js</h3>
+    <div id="myapp">
+        <demo></demo>
+           </div>
+       
+           <div id="myapp2">
+               
+        </div>
+
+               <script>
+                   Vue.component(
+                       "demo",
+                       {
+                           template:"<div><h3>hello this is first component made by {{name}}-{{run()}}</h3></div>",
+                           data:function(){
+                               return{
+                                   name:"vishal"
+                               }
+                           },
+                           methods:{
+                               run(){
+                                return "this is method"
+
+                               }
+                           }
+
+                       }
+                   );
+                var myapp=new Vue({
+                    el:"#myapp",
+                    data:{
+                      
+                    }
+              
+          
+                });
+                var myapp2=new Vue({
+                    el:"#myapp2",
+                    data:{
+                      
+                    }
+          
+                });
+          
+            </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>computed properties</h2>
+    <div id="myapp">
+
+<input type="text"  placeholder="enter first name" v-model="firstname">
+<input type="text"  placeholder="enter last name" v-model="lastname">
+<h3>FULL NAME: {{ getfullname }}</h3>
+<br><br>
+<h4>Enter a number to convert from meter to centimeter </h4>
+<input type="text" v-model="meter" placeholder="Enter a number to convert from meter to centimeter">
+<h2>Length in centimeter:{{convert}}</h2>
+<br><br>
+<h3>computing average</h3>
+<input type="text" placeholder="enter maths marks" v-model="maths">
+<input type="text" placeholder="enter physics marks" v-model="physics"><br>
+<input type="text" placeholder="enter chemistry marks" v-model="chemistry"><br>
+<h2>Your percentage is:{{percent}}</h2>
+</div>
+
+    <script>
+        var myapp= new Vue({
+            el:"#myapp",
+            data:{
+                firstname:"",
+                lastname:"",
+                meter:"",
+                maths:"",
+                physics:"",
+                chemistry:""
+            },
+            
+                computed:{
+                    getfullname:function(){
+                        return this.firstname+ " " +this.lastname;
+                    
+                },
+                convert:function(){
+                    return this.meter*100+"cm";
+                },
+                percent:function(){
+                    return (Number(this.maths) + Number(this.physics) + Number(this.chemistry))/3+"%";
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>
